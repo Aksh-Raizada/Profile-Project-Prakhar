@@ -8,12 +8,18 @@ body {
     padding: 0;
     overflow: hidden;
     background: linear-gradient(to bottom, #000, rgb(12, 22, 38));
+    font-family: 'Kode Mono', sans-serif;
 }
 
 .kode-mono-body {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kode Mono';
+    src: url('https://raw.githubusercontent.com/Aksh-Raizada/Profile-Project-Prakhar/main/fonts/kode-mono.ttf') format('truetype');
 }
 
 ::selection {
