@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    font-family: Kode Mono;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #000, rgb(12, 22, 38));
+}
+
+::selection {
+    background-color: #333333;
+    color: #00ff00;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+
+.bgcon{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.dots{
+    position: relative;
+    display: flex;
+}
+
+.dots span{
+    position: relative;
+    width: 5px;
+    height: 10px;
+    background: #779af296;
+    margin: 0 4px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 10px #779af260,
+    0 0 50px #779af26a,
+    0 0 100px #d7dff667;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(120s / var(--i));
+}
+
+.dots span:nth-child(even){
+    background: #f2777796;
+    box-shadow: 0 0 0 10px #f2777760,
+    0 0 50px #f277776a,
+    0 0 100px #f6d7d767;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+h2 {
+    display: inline-flex;
+    color: #fff;
+    font-size: 10vw;
+    font-weight: 600;
+    pointer-events: none;
+    padding-left: 2vw;
+    margin-top: 1vh;
+    padding-top: 1vh; 
+    margin-bottom: 1vh; 
+}
+
+.text{
+    display: inline-block;
+    font-size: 8vw;
+    letter-spacing: 10px;
+    width: 100%;
+    border-right: 5px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 10s steps(14) infinite, cursor 0.5s steps(1) infinite alternate;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+@keyframes cursor {
+    0%, 100% {
+        border-color: white;
+    }
+    25%, 50% {
+        border-color: transparent;
+    }
+    75% {
+        border-color: white;
+    }
+}
+
+@keyframes typing {
+    from,
+    to {
+        width: 0;
+    }
+    25%, 50% {
+        width: 100%;
+    }
+    75%, 100% {
+        width: 0;
+    }
+}
+
+.wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    padding: 2vh 0;
+}
+
+.wrapper i{
+    display: inline-block;
+    font-size: 48px; 
+}
+
+.card {
+    width: 80vw;
+    max-width: 280px;
+    height: 55vh;
+    max-height: 360px;
+    padding: 2vw 1vw;
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+    margin-top: 5vh; 
+    margin-bottom: 10vh; 
+    margin: 1vh;
+}
+
+.info a{
+    color: black;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(5.5vh);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgb(38, 72, 123));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .info {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(3vw);
+    transition: 0.5s all;
+    text-align: center;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(0vw);
+}
+
+.card .info h1 {
+    margin: 0;
+    font-size: 2vw;
+}
+
+.card .icon {
+    letter-spacing: 1px;
+    font-size: 1vw !important;
+    margin-top: 0.8vh;
+    margin-bottom: 0.5vh;
+    display: inline-block;
+}
+
+.card-text {
+    color: black;
+    font-size: 2vw;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.card:hover .card-text {
+    opacity: 0;
+}
+
+.card .icon:hover {
+    box-shadow: 0px 1.4vh 2vh rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
+    margin-bottom: 0.2vh;
+}
+
+.credit h3{
+    color: azure;
+    max-width: 90%;
+    text-wrap: nowrap;
+    margin-top: 30px;
+}
+
+.credit a{
+    color: azure;
+    text-decoration: none;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+}
+
+.credit a i {
+    display: inline-block;
+    animation: shake 2s ease-in-out infinite;
+    color: rgb(11, 174, 228);
+    font-size: 28px;
+}
+
