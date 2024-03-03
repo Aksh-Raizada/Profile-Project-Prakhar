@@ -10,6 +10,12 @@ body {
     background: linear-gradient(to bottom, #000, rgb(12, 22, 38));
 }
 
+.kode-mono-body {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 ::selection {
     background-color: #333333;
     color: #00ff00;
