@@ -238,6 +238,10 @@ h2 {
     opacity: 0;
 }
 
+.card p{
+    font-family: Kode Mono;
+}
+
 .card .icon:hover {
     box-shadow: 0px 1.4vh 2vh rgba(0, 0, 0, 0.5);
     transform: scale(1.2);
